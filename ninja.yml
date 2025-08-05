@@ -1,0 +1,28 @@
+name: Ruby_YML
+description: This is Ruby_YML sample
+version: 1.0
+settings:
+  build-steps:
+    - name: Install & Test
+      key: runner_cmd
+      disabled: false
+      workDir: ''
+      args:
+        commands: |-
+          bundle install
+          gem install rspec
+          gem install unit
+          rspec ./spec/calculator_spec.rb
+  artifacts:
+    - name: Files_always
+      condition: always
+      paths:
+        - '*'
+    - name: Files_buildSucceeds
+      condition: buildSucceeds
+      paths:
+        - test
+    - name: Files_buildFails
+      condition: buildFails
+      paths:
+        - app
