@@ -1,0 +1,46 @@
+name: Ruby_App_Public
+description: ""
+settings:
+  vcs-steps:
+  - key: vcs_git
+    name: vcs
+    disabled: false
+    args:
+      authType: anonymous
+      branch: main
+      url: https://github.com/abheekm/Ruby_App.git
+    argsProtected: {}
+  build-steps:
+  - key: runner_cmd
+    name: Install 1
+    disabled: false
+    workDir: ""
+    args:
+      commands: bundle install
+    argsProtected: {}
+  - key: runner_cmd
+    name: Install 2
+    disabled: false
+    workDir: ""
+    args:
+      commands: gem install rspec
+    argsProtected: {}
+  - key: runner_cmd
+    name: Install 3
+    disabled: false
+    workDir: ""
+    args:
+      commands: gem install unit
+    argsProtected: {}
+  - key: runner_cmd
+    name: Test
+    disabled: false
+    workDir: ""
+    args:
+      commands: rspec ./spec/calculator_spec.rb
+    argsProtected: {}
+  artifacts:
+  - name: Sample
+    condition: buildSucceeds
+    paths:
+    - '*'
