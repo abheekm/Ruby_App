@@ -6,3 +6,4 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 end
+#test comment 1
