@@ -5,18 +5,4 @@ class IndexControllerTest < ActionDispatch::IntegrationTest
     get index_index_url
     assert_response :success
   end
-  data = { id: 1, name: "test"
-  puts data
-
-  class = "test"
-
-  def login
-      authenticate_user
-  end
-
-  def add(a, b)
-    a + b
-  end
-
-  add(5)
 end
