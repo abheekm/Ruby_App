@@ -21,12 +21,6 @@ class TestCalculator < Minitest::Test
     
     # Test the ‘subtract’ method
     result = @calculator.subtract(15, 3)
-    num = 10
-    text = "5"
-    result = num + text
     assert_equal 12, result
   end
-
-  user = nil
-  puts user.name
 end
